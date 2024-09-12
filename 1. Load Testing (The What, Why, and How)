@@ -1,0 +1,37 @@
+WHAT IS LOAD TESTING:
+
+- varifying how an application behaves under a heavy load hence the name.
+- with the help of load testing, we can assess the reponse of app to increaseing demand and then improve it accordingly.
+
+________________________________________________________________________________________________________________________
+
+WHY LOAD TESTING:
+
+- you should adopt load testing when you're concerned about the availability and scalability of your website. Even though
+    the frontend is responsible for relevant performance issues, you should focus on the backend to ensure your performance
+    and reliability goals when scaling your site.
+
+__________________________________________________________________________________________________________________________
+
+HOW:
+
+Step 1. Install NodeJs.
+
+Step 2. Install k6.
+        windows command: winget install k6 --source winget
+
+Step 3. Create a test scrpit. Test script in k6 are written in JavaScript.
+
+        (script.js file)
+
+        import http from 'k6/http';
+
+        export default function () {
+        http.get('http://localhost:5152/api/Invoice');
+        }
+
+Step 4. Run the EFCoreDemo project.
+        command: dotnet run
+
+Step 5. Now, open another terminal and run the the script file.
+        command: k6 run script.js
